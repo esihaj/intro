@@ -1,0 +1,49 @@
+{{ define "styles" }}
+    {{ $.Scratch.Set "style_opts" (dict "src" "scss/pages/about.scss" "dest" "css/about.css") }}
+{{ end }}
+
+{{ define "main" }}
+
+<div class="splash-container">
+  <div class="splash">
+
+    <h1>{{ .Params.heading }}<span class="fancy">.</span></h1>
+    {{ if isset .Params "handle" }}
+    <span class="handle">@{{ .Params.handle }}</span>
+    {{ end }}
+    <p>
+      I am currently a PhD student at <a href="https://cse.ucsd.edu" target="_blank"> University of California San Diego</a>
+      working as a member of <a href="http://nvsl.io/" target="_blank"> Non-Volatile Systems Lab</a>.
+      I am going to work on
+      <a href="https://en.wikipedia.org/wiki/Compute_Express_Link" target="_blank"> Compute Express Link™ (CXL™) technology</a>
+      and memory systems.
+    </p>
+    <p>
+        You can access my <a href="https://esihaj.uteng.io" target="_blank">Learning Journal</a> and <a href="https://esihaj.github.io/Ehsan_Hajyasini_CV.pdf" target="_blank">CV</a>.
+    </p>
+    <p>
+        Previously I was part of the software architecture team, lead of R&D, and a co-founder in 
+        <a href="http://nvsl.io/" target="_blank">RadinBourse</a>. 
+        <br>
+        A high-tech company focusing on innovating and creating a high-performance trading platform for financial markets.
+        I was responsible for designing the sub-microsecond trading engine,
+        designing the networking and storage solutions,
+        and addressing system's availability and scalability challenges.
+    </p>
+    <p>
+        My leadership style is based on
+        <a href="https://www.amazon.com/Management-3-0-Developers-Developing-Addison-Wesley/dp/0321712471" target="_blank">Management 3.0</a>.
+        And my conflict resolution based on 
+        <a href="https://www.amazon.com/Crucial-Conversations-Talking-Stakes-Second/dp/1469266822" target="_blank">Crucial Conversations</a>.
+        <br>
+        Further more, I also took part in designing a
+        <a href="https://circleci.com/blog/why-we-re-designed-our-engineering-career-paths-at-circleci/" target="_blank">Competency Matrix</a>
+        for the company to help new engineers grow.
+    </p>
+
+    
+    {{ partial "social-icons.html" .}}
+  </div>
+</div>
+
+{{ end }}
